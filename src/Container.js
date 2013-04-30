@@ -50,6 +50,20 @@
             return this;
         },
         /**
+         * remove node from container
+         * @name subtract
+         * @methodOf Kinetic.Container.prototype
+         * @param {Node} child
+         */
+        subtract: function(child) {
+                var go = Kinetic.Global, children = this.children;
+                child.index = children.length;
+                child.parent = this;
+                child.pop(child);
+
+                return this;
+          },
+        /**
          * return an array of nodes that match the selector.  Use '#' for id selections
          * and '.' for name selections
          * ex:
